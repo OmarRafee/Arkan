@@ -1,0 +1,368 @@
+/* About Us Wrapper */
+.about-us-wrapper {
+  font-family: "Arial", sans-serif;
+  color: black;
+  background-color: white;
+  padding: 10px 20px 40px;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  text-align: justify;
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Fade-in effect */
+}
+/* Image Carousel */
+.image-carousel {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+/* Wrapper to handle sliding */
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Smooth Slide Track */
+.carousel-track {
+  display: flex;
+  transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Slide */
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Carousel Image */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay to improve text visibility */
+.carousel-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.carousel-text {
+  position: absolute;
+  top: 70%; /* Vertically aligned */
+  left: 30%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Ensure text stays centered */
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  display: block; /* Ensure text stays in line */
+  text-align: left; /* Align the text */
+  opacity: 0; /* Initial opacity for animation */
+  transition: opacity 0.5s ease-in-out;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Wave Effect for Text */
+.carousel-text.wave {
+  opacity: 1;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.carousel-track {
+  transition: transform 1.5s ease-in-out; /* Smooth transition for the slide */
+}
+
+.carousel-text.wave span {
+  display: inline-block;
+  animation: waveEffect 1.5s ease-in-out;
+  animation-delay: 1s; /* Delay the text animation by 0.5 seconds */
+}
+/* Wave Effect */
+@keyframes waveEffect {
+  0% {
+    transform: translateY(0px) scale(1);
+    color: #ffffff; /* White */
+  }
+  25% {
+    color: #1a3530; /* Yellow */
+  }
+  50% {
+    transform: translateY(-10px) scale(1.2);
+    color: #1a3530; /* Orange */
+  }
+  75% {
+    color: #1a3530; /* Blue */
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    color: #ffffff; /* White */
+  }
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Carousel Buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.left {
+  left: 20px;
+}
+.carousel-button.right {
+  right: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-text {
+    font-size: 1rem;
+    top: 90%;
+    left: 30%;
+  }
+
+  .image-carousel {
+    height: 50vh;
+  }
+
+  .carousel-button.left {
+    left: 10px;
+  }
+  .carousel-button.right {
+    right: 10px;
+  }
+}
+
+/* About Us Section */
+.about-us-section {
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInSection 1s forwards;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Title Styling */
+.about-us-title {
+  font-size: 2em;
+  color: #1a3530;
+  text-align: left;
+  margin-bottom: 20px;
+  animation: slideUp 2s forwards; /* Slide-in effect for title */
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Content Styling */
+.about-us-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Slide-in from left for images */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about-us-image {
+  width: 40%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  animation: slideInLeft 2s forwards;
+}
+
+/* Paragraph Styling */
+.custom-font {
+  font-family: "DMSerifText-Regular", sans-serif;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  white-space: nowrap;
+  font-weight: bold;
+}
+/* Paragraph Styling */
+.about-us-paragraph {
+  width: 55%;
+  margin: 0;
+  align-items: center;
+  line-height: 1.6;
+  text-align: justify;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  opacity: 0;
+  transform: translateY(30px); /* Initial position for the slide effect */
+  animation: funParagraphAnimation 1.5s ease-out forwards; /* Fun animation */
+}
+
+@keyframes funParagraphAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8); /* Start from below and smaller */
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateY(10px) scale(1.05); /* Slight upward movement and scale */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* End at normal position with full opacity */
+  }
+}
+
+.download-container {
+  display: flex;
+  justify-content: flex-end; /* Pushes the button to the right */
+  margin-top: 10px; /* Adds spacing above */
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #1a3530; /* Change color if needed */
+  color: white;
+  padding: 10px 10px;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #00544a;
+}
+/* Fade-in Section */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Vision Section Adjustment for Desktop */
+@media (min-width: 769px) {
+  .vision-section-desktop {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .about-us-wrapper {
+    margin-top: 0px;
+  }
+
+  .about-us-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-us-image {
+    width: 100%;
+    height: auto;
+    margin: 0 0 15px;
+  }
+
+  .about-us-paragraph {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .image-carousel {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  /* Carousel Buttons */
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+}

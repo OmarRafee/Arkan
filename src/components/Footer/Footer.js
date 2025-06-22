@@ -1,0 +1,141 @@
+import React from "react";
+import "./Footer.css";
+import arkansmall from "../../assets/arkansmall.svg";
+import { Link } from "react-router-dom";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaBox, // P.O. Box Icon
+  FaInstagram,
+  FaFacebookF,
+  FaSnapchatGhost,
+  FaLinkedin,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-section">
+          <div className="logo-and-description">
+            <img src={arkansmall} alt="Arkan Logo" className="footer-logo" />
+            <p>
+              <span className="custom-font">Arkan Al-Tafawuq</span>, a BinRashid
+              Group company, excels in Construction, Business Solutions, and
+              Marketing. Driven by innovation and integrity, we shape a future
+              where ambition meets achievement.
+            </p>
+          </div>
+        </div>
+
+        <div className="footer-section">
+          <h4>Our Services</h4>
+          <ul>
+            <li>
+              <Link to="/services" className="none nonemargin">
+                Construction{" "}
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/under-construction" className="none nonemargin">
+                Marketing{" "}
+              </Link>
+            </li>
+            <li>
+              <Link to="/under-construction" className="none nonemargin">
+                Business Solutions{" "}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>
+            <Link to="/ContactUs" className="none">
+              Contact Us
+            </Link>
+          </h4>
+          <ul>
+            <li>
+              <FaPhoneAlt className="icon" />
+              +966 54 005 0087
+            </li>
+            <li>
+              <FaEnvelope className="icon" />
+              info@arkanaltafawuq.com
+            </li>
+            <li>
+              <FaMapMarkerAlt className="icon" />
+              KSA - Riyadh Al Aylaiah <br />
+              District, Building 7573
+            </li>
+            <li>
+              <FaBox className="icon" />
+              P.O. Box: 2160-12222
+            </li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>Follow Us</h4>
+          <div className="social-icons">
+            <a
+              href="https://www.instagram.com/arkanaltafawuq?igsh=MTFjbDBuZjk4dmp2OA%3D%3D&utm_source=qr "
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="icon" />
+            </a>
+            <a
+              href="https://www.facebook.com/share/18bAiA2qvy/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF className="icon" />
+            </a>
+            <a
+              href="https://snapchat.com/t/RGhsnPXo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaSnapchatGhost className="icon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/105997914/admin/settings/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="icon" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@arkan.al.tafawuq?_t=ZS-8stfanyTcwh&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTiktok className="icon" />
+            </a>
+            <a
+              href="https://www.youtube.com/@ArkanAlTafawuq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube className="icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>
+          &copy; 2024 <span className="custom-font">Arkan Al-Tafawuq</span>. All
+          rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

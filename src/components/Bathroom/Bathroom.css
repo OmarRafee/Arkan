@@ -1,0 +1,118 @@
+/* Reset styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Main container for the projects */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Each project card */
+.project-card {
+  width: 300px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Project images */
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the container */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect */
+.project-card:hover .project-image {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it appears above all content */
+}
+
+/* Popup content container */
+.popup-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Popup image */
+.popup-image {
+  width: 600px; /* Set a fixed width */
+  height: 400px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image maintains its aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+  transition: transform 0.3s ease-in-out; /* Smooth resize effect */
+}
+
+.popup-image:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Close button */
+.popup-close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.popup-close-button:hover {
+  color: #ff9800; /* Highlight color on hover */
+}
+
+/* Navigation buttons */
+.popup-prev-button,
+.popup-next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.popup-prev-button {
+  left: -60px;
+}
+
+.popup-next-button {
+  right: -60px;
+}
+
+.popup-prev-button:hover,
+.popup-next-button:hover {
+  color: #ff9800; /* Highlight color on hover */
+}

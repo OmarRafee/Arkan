@@ -1,0 +1,66 @@
+/* Container Styling */
+.under-construction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f9f9; /* Light background color */
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Arkan Logo with Rotation */
+.arkan-logo {
+  width: 150px; /* Adjust size of the logo */
+  height: auto;
+  margin-bottom: 20px;
+  animation: rotate 3s linear infinite; /* Add rotating animation */
+}
+
+/* Under Construction Title */
+h1 {
+  color: #1a3530; /* Darker text for better visibility */
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+/* Subtitle Text */
+
+/* Progress Bar */
+.progress-bar {
+  width: 80%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+  height: 100%;
+  width: 50%; /* Simulate progress, adjust this percentage */
+  background-color: #1a3530; /* Blue progress color */
+  animation: progress-animation 4s linear infinite;
+}
+
+/* Rotating Animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Progress Animation */
+@keyframes progress-animation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

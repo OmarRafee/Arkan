@@ -1,0 +1,194 @@
+/* Footer Container */
+.footer {
+  background-color: black; /* Dark theme background */
+  color: #d3aa8b; /* Accent color */
+  padding: 5px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 20px;
+  text-align: center;
+}
+
+.custom-font {
+  font-family: "DMSerifText-Regular", sans-serif; /* Apply the custom font */
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.logo-and-description {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.footer-logo {
+  width: 90px;
+  height: auto;
+}
+.logo-and-description p {
+  color: white;
+  text-align: justify;
+  font-size: 10px;
+}
+.footer-section h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  margin-left: 55px;
+}
+
+.footer-section ul li {
+  font-size: 14px;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  gap: 10px;
+  margin: 8px 0;
+  text-align: justify;
+}
+
+.icon {
+  font-size: 18px;
+  color: #d3aa8b;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #d3aa8b;
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #ffffff; /* Change color on hover */
+  transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #d3aa8b;
+  border-top: 1px solid #d3aa8b;
+  padding-top: 10px;
+}
+
+.none {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+  .icon {
+    font-size: 15px;
+    color: #d3aa8b;
+    justify-content: flex-start;
+  }
+  .logo-and-description img {
+    width: 150px;
+  }
+  .logo-and-description p {
+    font-size: 12px;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center align the content */
+    text-align: center;
+    gap: 20px; /* Add spacing between groups */
+  }
+
+  .footer-section {
+    margin: 5px 0;
+    text-align: center;
+    width: 100%; /* Ensure full width for alignment */
+  }
+
+  .footer-section-group {
+    display: flex;
+    flex-direction: row; /* Group "Our Services" and "Contact Us" horizontally */
+    justify-content: space-between; /* Add space between the sections */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between sections */
+    width: 100%; /* Ensure consistent alignment */
+    padding: 0 20px; /* Add padding for better spacing */
+  }
+
+  .footer-section h4 {
+    font-size: 16px; /* Adjust heading size */
+    margin-bottom: 10px; /* Add spacing below headings */
+  }
+
+  /* Center the list in the middle of the screen */
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Centers the list horizontally */
+    text-align: left; /* Ensures text remains left-aligned */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the list itself */
+  }
+
+  /* Ensuring list items start from the same position */
+  .footer-section ul li {
+    font-size: 14px;
+    text-align: left; /* Aligns text inside each list item */
+    display: flex;
+    align-items: center; /* Aligns icons and text properly */
+    gap: 10px; /* Adds spacing between the icon and text */
+    min-width: 200px; /* Ensures all items start at the same point */
+  }
+  .nonemargin {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Centers the list horizontally */
+    text-align: left; /* Ensures text remains left-aligned */
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Centers the list itself */
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 20px; /* Add spacing above icons */
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+}

@@ -1,0 +1,157 @@
+/* Overall Page Styling */
+.contact-page {
+  font-family: "Poppins", sans-serif;
+  color: #1a3530;
+  background-color: #1a3530;
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Styling */
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header h1 {
+  font-size: 2.8em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+/* Form Container */
+.contact-form-container {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form label {
+  font-size: 1em;
+  color: #1a3530;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 4px;
+  font-size: 1em;
+  border: 1px solid #d3aa8b;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #1a3530;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #1a3530;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #d3aa8b;
+  color: #1a3530;
+}
+
+/* Privacy Policy Link */
+.privacy-policy {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #1a3530;
+  text-decoration: none;
+}
+
+.privacy-policy:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+
+  .contact-header h1 {
+    font-size: 2em;
+  }
+
+  .contact-header p {
+    font-size: 1em;
+  }
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+    align-items: stretch; /* Adjust alignment for mobile */
+    margin-top: 10px;
+  }
+
+  .contact-header h1 {
+    font-size: 1.8em; /* Smaller font size for headers */
+    margin-bottom: 10px; /* Reduce margin */
+  }
+
+  .contact-header p {
+    font-size: 1em; /* Adjust font size for description */
+    margin-bottom: 20px; /* Add some spacing */
+  }
+
+  .contact-form-container {
+    padding: 20px 15px; /* Reduce padding for compact display */
+    width: 100%; /* Ensure full width */
+    max-width: 93%; /* Remove max width constraint */
+  }
+
+  .contact-form {
+    gap: 10px; /* Reduce gap between form elements */
+  }
+
+  .submit-button {
+    font-size: 1em; /* Adjust font size */
+    padding: 10px 15px; /* Adjust padding */
+  }
+
+  .privacy-policy {
+    font-size: 0.8em; /* Smaller text for privacy policy */
+    text-align: center; /* Center align for mobile */
+  }
+}

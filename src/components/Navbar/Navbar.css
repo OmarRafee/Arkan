@@ -1,0 +1,214 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 17px;
+  background-color: transparent; /* Default transparent */
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Green background when scrolling */
+.navbar.scrolled {
+  background-color: #1a3530; /* Your desired green */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Placeholder to add space below navbar */
+.navbar-placeholder {
+  height: 80px; /* Match navbar height */
+  width: 100%;
+  margin-bottom: -80px; /* Negative margin to pull content up */
+}
+
+/* Left section for logo */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: 50px; /* Add margin to the left of the logo */
+}
+
+/* Right section for menu items */
+.navbar-right {
+  margin-right: 50px;
+}
+
+/* Navbar logo */
+.navbar-logo {
+  width: 220px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Navbar menu container */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Spacing between menu items */
+  margin-right: 100px; /* Add margin to the right of the menu */
+  padding: 0;
+}
+
+/* Navbar menu items */
+.navbar-menu li {
+  position: relative;
+  margin: 0 10px; /* Add left and right margin to buttons */
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: #d3aa8b; /* Accent color on hover */
+}
+
+/* Dropdown trigger */
+.dropdown-trigger {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.dropdown-trigger:hover {
+  color: #d3aa8b;
+}
+.dropdown-trigger .dropdown-arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1e1e1e; /* Slightly lighter for contrast */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for dropdown */
+  padding: 10px 0;
+  border-radius: 4px;
+  list-style: none;
+  z-index: 10001; /* Above the navbar */
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  color: #d3aa8b;
+}
+
+/* Burger Icon for Mobile */
+.burger-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  margin-right: 20px;
+  z-index: 1001;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #1a3530; /* Match navbar background */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-menu li {
+  margin: 15px 0;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #d3aa8b;
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: absolute;
+    top: 80px; /* Adjust based on navbar height */
+    left: 0;
+    padding-left: 80px;
+    width: 100%;
+    background-color: #1a3530; /* Match navbar background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-top: -20px;
+  }
+  .navbar-left img {
+    display: flex;
+    align-items: center;
+    margin-left: 2px; /* Add margin to the left of the logo */
+    width: 150px;
+  }
+
+  .navbar-menu.active {
+    display: flex; /* Show menu when active */
+  }
+
+  .navbar-menu li {
+    margin: 10px 0; /* Add spacing between menu items */
+    text-align: center; /* Center align menu items */
+  }
+
+  .navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .burger-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 24px; /* Adjust icon size */
+    color: white;
+    margin-right: 20px;
+  }
+}
