@@ -40,9 +40,14 @@ const Footer = () => {
               </Link>
             </li>
             <li>
+              <Link to="/production" className="none nonemargin">
+                Production{" "}
+              </Link>
+            </li>
+            <li>
               {" "}
               <Link to="/under-construction" className="none nonemargin">
-                Marketing{" "}
+                Business Setup{" "}
               </Link>
             </li>
             <li>
@@ -62,7 +67,8 @@ const Footer = () => {
           <ul>
             <li>
               <FaPhoneAlt className="icon" />
-              +966 54 005 0087
+              +966 54 946 2381 <br />
+              +966 54 947 2381
             </li>
             <li>
               <FaEnvelope className="icon" />
@@ -82,16 +88,62 @@ const Footer = () => {
 
         <div className="footer-section">
           <h4>Follow Us</h4>
+          <h7>Constsruction</h7>
           <div className="social-icons">
             <a
-              href="https://www.instagram.com/arkanaltafawuq?igsh=MTFjbDBuZjk4dmp2OA%3D%3D&utm_source=qr "
+              href="https://www.instagram.com/arkanaltafawuq?igsh=bXpsaXkwMXNzbWk5"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram className="icon" />
             </a>
             <a
-              href="https://www.facebook.com/share/18bAiA2qvy/?mibextid=wwXIfr"
+              href="https://www.facebook.com/share/1ArwyCq1q3/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF className="icon" />
+            </a>
+            <a
+              href="https://snapchat.com/t/RGhsnPXo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaSnapchatGhost className="icon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/105997914/admin/settings/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="icon" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@arkan.al.tafawuq?_t=ZS-8xzUdDNcuaS&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTiktok className="icon" />
+            </a>
+            {/* <a
+              href="https://www.youtube.com/@ArkanAlTafawuq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube className="icon" />
+            </a> */}
+          </div>
+          <h7>Production</h7>
+          <div className="social-icons">
+            <a
+              href="https://www.instagram.com/arkanaltafawuqproductionhouse?igsh=N253dXZ5bTBvYThr&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="icon" />
+            </a>
+            <a
+              href="https://www.facebook.com/share/19Fn42FAqV/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -118,13 +170,13 @@ const Footer = () => {
             >
               <FaTiktok className="icon" />
             </a>
-            <a
+            {/* <a
               href="https://www.youtube.com/@ArkanAlTafawuq"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaYoutube className="icon" />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

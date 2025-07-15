@@ -1,179 +1,200 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./About.css";
-import visionnew from "../../assets/visionnew.jpg";
-import missionnew from "../../assets/missionnew.jpg";
-import aboutus from "../../assets/aboutus.jpg";
-import DINNING32 from "../../assets/DINNING32.jpg";
-import LIVING15 from "../../assets/LIVING15.jpg";
-import LIVING23 from "../../assets/LIVING23.jpg";
+import aboutMainImg from "../../assets/aboutmain.webp";
+import {
+  FaHandshake,
+  FaLightbulb,
+  FaMedal,
+  FaBookOpen,
+  FaGlobeAmericas,
+  FaChessKing,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
 
-const images = [
-  { src: DINNING32, text: "Elegant Dining Experience" },
-  { src: LIVING15, text: "Luxury Living Spaces" },
-  { src: LIVING23, text: "Modern Comfort & Style" },
-];
-
-const AboutUs = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [animateText, setAnimateText] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 5000); // Auto-slide every 5 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleNext = () => {
-    setAnimateText(false); // Reset text animation
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      setAnimateText(true); // Re-trigger animation after sliding
-    }, 500); // Keep text visible for 0.5s before the slide
-  };
-
-  const handlePrev = () => {
-    setAnimateText(false); // Reset text animation
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
-      );
-      setAnimateText(true); // Re-trigger animation after sliding
-    }, 500); // Keep text visible for 0.5s before the slide
-  };
+const About = () => {
+  const values = [
+    { icon: <FaHandshake />, text: "THOUGHT PARTNERSHIP" },
+    { icon: <FaLightbulb />, text: "BE THE SOLUTION" },
+    { icon: <FaChessKing />, text: "LEADERSHIP" },
+    { icon: <FaBookOpen />, text: "LEARN AND TEACH" },
+    { icon: <FaMedal />, text: "DELIVER WITH EXCELLENCE" },
+    { icon: <FaGlobeAmericas />, text: "DIVERSITY" },
+  ];
 
   return (
-    <div>
-      {/* Image Carousel */}
-      <div className="image-carousel">
-        <div className="carousel-wrapper">
-          <div
-            className="carousel-track"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+    <div className="about-page">
+      {/* Hero Image Section */}
+      <motion.div
+        className="about-hero"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <img src={aboutMainImg} alt="About Background" className="hero-image" />
+      </motion.div>
+
+      {/* Main Content Section */}
+      <motion.div
+        className="overlay-content"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <div className="overlay-text">
+          <motion.h2
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            {images.map((image, index) => (
-              <div key={index} className="carousel-slide">
-                <img
-                  src={image.src}
-                  alt="Sliding content"
-                  className="carousel-image"
-                />
-                <div className="carousel-overlay"></div>
-                <div
-                  className={`carousel-text ${
-                    animateText && index === currentIndex ? "wave" : ""
-                  }`}
-                >
-                  {image.text.split("").map((letter, i) => (
-                    <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
-                      {letter}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+            <span className="highlight">ABOUT US</span>
+            <span className="divider">|</span>
+            <span className="headline">
+              Welcome to Arkan Al-Tafawuq, where ambition meets achievement.
+            </span>
+          </motion.h2>
+
+          <div className="about-details">
+            <motion.div
+              className="column"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              <p>
+                <strong>As a key part of BinRashid Group</strong>, we specialize
+                in Construction, Architectural Design, Interior and Exterior
+                Designs, Advertising, Event Execution, Business Solutions, and
+                Production House Services, ensuring exceptional standards across
+                Saudi Arabia.
+              </p>
+              <p>
+                Our expertise spans residential and commercial construction, 3D
+                design, and finishing, delivering high-quality, efficient, and
+                modern aesthetics tailored to diverse client needs.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="column"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              <p>
+                <strong>In Advertising, Branding, and Event Execution</strong>,
+                our Production House offers strategic brand positioning, booth
+                fabrication, signage, high-quality printing, LED screen setups,
+                acrylic and wood craftsmanship, ensuring impactful brand
+                presence and immersive audience engagement.
+              </p>
+              <p>
+                <strong>Arkan Al-Tafawuq</strong> brings visions to life with
+                <strong> creativity, precision, and dedication.</strong>
+              </p>
+
+              {/* <motion.a
+                href="/portfolio.pdf"
+                className="download-btn"
+                download
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Download Our Portfolio
+              </motion.a> */}
+            </motion.div>
           </div>
         </div>
+      </motion.div>
+
+      {/* Mission & Vision Section */}
+      <div className="mission-vision-section">
+        <motion.div
+          className="mv-card mission-card"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <div className="mv-content front">
+            <h3>MISSION</h3>
+            <div className="underline mission-line"></div>
+            <p>
+              Our mission at Arkan Al-Tafawuq is to Create pioneering solutions
+              in Marketing and Advertising, Business Solutions, Construction,
+              and Production House Services, combining innovation and expertise
+              to ensure excellence in every project.
+            </p>
+          </div>
+          <div className="mv-content back">
+            <p>
+              We are dedicated to enhancing brand presence through strategic
+              branding, visual communication, and event execution, crafting
+              unique and immersive experiences that engage audiences and
+              strengthen market impact. Driven by integrity, innovation, and
+              excellence, we continually strive to set new benchmarks.
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="mv-card vision-card"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <div className="mv-content front">
+            <h3>VISION</h3>
+            <div className="underline vision-line"></div>
+            <p>
+              Our vision at Arkan Al-Tafawuq is to be the driving force of
+              innovation and excellence across the Construction, Marketing &
+              Advertising, Production House, and Business Solutions Services.
+            </p>
+          </div>
+          <div className="mv-content back">
+            <p>
+              We aim to push boundaries, redefine standards, and consistently
+              surpass expectations in every endeavor. With a steadfast
+              commitment to sustainability, client satisfaction, and industry
+              leadership, we aspire to create a future where our work leaves a
+              lasting impact on businesses, industries, and communities.
+            </p>
+          </div>
+        </motion.div>
       </div>
 
-      <div className="about-us-wrapper">
-        {/* About Section */}
-        <section
-          id="about-section"
-          className="about-us-section fade-in-section"
-        >
-          <h2 className="about-us-title">About Us</h2>
-          <div className="about-us-content">
-            <img
-              src={aboutus}
-              alt="About Us"
-              className="about-us-image slide-in-left"
-            />
-            <p className="about-us-paragraph">
-              At <span className="custom-font">Arkan Al-Tafawuq</span>,
-              excellence drives everything we do. As a proud part of the
-              BinRashid Group, we operate from Saudi Arabia, shaping industries
-              through our expertise in Construction, Business Solutions, and
-              Marketing & Advertising. We build inspiring spaces, empower
-              businesses with innovative strategies, and craft campaigns that
-              connect brands to audiences. Guided by integrity and innovation,
-              we’re more than a company—we’re a trusted partner in creating a
-              future of excellence. Welcome to{" "}
-              <span className="custom-font">Arkan Al-Tafawuq</span>, where
-              ambition meets achievement.
-            </p>
-          </div>
-        </section>
+      {/* Values Section */}
+      <motion.div
+        className="values-section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        <div className="values-left">
+          <h2 className="values-title">VALUES</h2>
+          <div className="values-divider" />
+        </div>
 
-        {/* Vision Section */}
-        <section
-          id="vision-section"
-          className="about-us-section fade-in-section"
-        >
-          <h2 className="about-us-title">Our Vision</h2>
-          <div className="about-us-content vision-section-desktop">
-            <img
-              src={visionnew}
-              alt="Vision"
-              className="about-us-image slide-in-left"
-            />
-            <p className="about-us-paragraph">
-              Our vision at{" "}
-              <span className="custom-font">Arkan Al-Tafawuq</span> is to be the
-              driving force of innovation and excellence across the Marketing &
-              Advertising, Business Solutions, and Construction sectors. We aim
-              to push boundaries, redefine standards, and consistently surpass
-              expectations in every endeavor. With a steadfast commitment to
-              sustainability, client satisfaction, and industry leadership, we
-              aspire to create a future where our work leaves a lasting impact
-              on businesses, industries, and communities. Welcome to{" "}
-              <span className="custom-font">Arkan Al-Tafawuq</span>, where our
-              vision leads to limitless possibilities.
-            </p>
-          </div>
-        </section>
-
-        {/* Mission Section */}
-        <section
-          id="mission-section"
-          className="about-us-section fade-in-section"
-        >
-          <h2 className="about-us-title">Our Mission</h2>
-          <div className="about-us-content">
-            <img
-              src={missionnew}
-              alt="Mission"
-              className="about-us-image slide-in-left"
-            />
-            <p className="about-us-paragraph">
-              At <span className="custom-font">Arkan Al-Tafawuq</span>, our
-              mission is to lead with excellence across the Marketing &
-              Advertising, Business Solutions, and Construction sectors. We are
-              committed to delivering innovative marketing strategies that
-              engage and inspire, empowering businesses with tailored solutions
-              to achieve their goals, and constructing reliable infrastructure
-              that defines quality and endurance. With a foundation built on
-              integrity, dedication to excellence, and a focus on client
-              satisfaction, we aim to be the trusted partner that consistently
-              exceeds expectations. Welcome to{" "}
-              <span className="custom-font">Arkan Al-Tafawuq</span>, where
-              visions are transformed into reality.
-            </p>
-          </div>
-          <div className="download-container">
-            <a
-              href="/files/Potfolio.pdf"
-              download="Arkan-Al-Tafawuq-Potfolio.pdf"
-              className="download-button"
+        <div className="values-grid">
+          {values.map((value, index) => (
+            <motion.div
+              key={index}
+              className="value-item"
+              whileHover={{ scale: 1.05, color: "#D5AB8C" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.7 + index * 0.1,
+              }}
             >
-              Download our Portfolio
-            </a>
-          </div>
-        </section>
-      </div>
+              <span className="value-icon">{value.icon}</span>
+              <span>{value.text}</span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 };
 
-export default AboutUs;
+export default About;

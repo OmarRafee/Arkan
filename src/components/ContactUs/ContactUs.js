@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
+import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    email: "",
+    from_email: "",
     subject: "",
     message: "",
   });
@@ -15,7 +16,22 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Your message has been sent!");
+
+    emailjs
+      .send(
+        "service_jwticqi", // 🔁 Replace this
+        "template_e4aqb8l", // 🔁 Replace this
+        formData,
+        "OC-kGvkcCmtGc2lrh" // 🔁 Replace this
+      )
+      .then(() => {
+        alert("✅ Your message has been sent!");
+        setFormData({ from_email: "", subject: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("❌ EmailJS Error:", error);
+        alert("Something went wrong. Please try again.");
+      });
   };
 
   return (
@@ -30,12 +46,12 @@ const ContactUs = () => {
 
       <div className="contact-form-container">
         <form onSubmit={handleSubmit} className="contact-form">
-          <label htmlFor="email">Your Email Address</label>
+          <label htmlFor="from_email">Your Email Address</label>
           <input
             type="email"
-            id="email"
-            name="email"
-            value={formData.email}
+            id="from_email"
+            name="from_email"
+            value={formData.from_email}
             onChange={handleChange}
             placeholder="you@example.com"
             required
@@ -58,7 +74,7 @@ const ContactUs = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder=" "
+            placeholder="Your message..."
             required
           ></textarea>
 

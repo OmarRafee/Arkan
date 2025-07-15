@@ -3,12 +3,13 @@
   display: flex;
   padding: 20px;
   font-family: Arial, sans-serif;
-  margin-top: 80px;
+  background-color: #f4f4f4; /* Light background for contrast */
 }
 
 /* Categories Section */
 .categories {
   flex: 1;
+  margin-top: 80px;
 }
 
 .categories h2 {
@@ -54,6 +55,7 @@
 /* Services Section */
 .services {
   flex: 3;
+  margin-top: 80px;
 }
 
 .services h2 {
@@ -149,4 +151,26 @@
     width: 100%; /* Ensure cards take full width */
     margin: 0 auto; /* Center the cards */
   }
+}
+
+.download-container {
+  display: flex;
+  justify-content: flex-end; /* Pushes the button to the right */
+  margin-top: 10px; /* Adds spacing above */
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #1a3530; /* Change color if needed */
+  color: white;
+  padding: 10px 10px;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #00544a;
 }

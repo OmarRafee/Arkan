@@ -23,6 +23,7 @@ import Commercial from "./components/Commercial/Commercial";
 import Residential from "./components/Residential/Residential";
 import Design from "./components/Design/Design";
 import Arkanhome from "./components/Arkanhome/Arkanhome";
+import Production from "./components/Production/Production";
 
 const App = () => {
   return (
@@ -52,6 +53,7 @@ const App = () => {
           <Route exact path="/Commercial" component={Commercial} />
           <Route exact path="/Residential" component={Residential} />
           <Route exact path="/Design" component={Design} />
+          <Route exact path="/production" component={Production} />
           <Route
             exact
             path="/under-construction"

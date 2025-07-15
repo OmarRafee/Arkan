@@ -100,7 +100,7 @@ const Arkanhome = () => {
   const partnerImages = [
     partner1,
     partner2,
-    partner3,
+
     partner4,
     partner5,
     partner6,
@@ -132,9 +132,8 @@ const Arkanhome = () => {
         <img src={heroImage} alt="Arkan Hero" className="hero-image" />
         <div className="highlight-bar">
           <h1>
-            <span className="bold">
-              BUILDING THE FUTURE WITH KINGDOM-WORTHY QUALITY
-            </span>
+            BUILDING THE FUTURE WITH
+            <span className="bold">KINGDOM</span>-WORTHY QUALITY
           </h1>
         </div>
       </div>
@@ -145,10 +144,10 @@ const Arkanhome = () => {
           ambition meets achievement.
         </p>
         <p>
-          As a key part of BinRashid Group, we specialize in Construction,
-          Architectural Design, Interior and Exterior Designs, Advertising,
-          Event Execution, Business Solutions, and Production House
-          homeservices, ensuring exceptional standards across Saudi Arabia.{" "}
+          We specialize in Construction, Architectural Design, Interior and
+          Exterior Designs, Advertising, Event Execution, Business Solutions,
+          and Production House services, ensuring exceptional standards across
+          Saudi Arabia.{" "}
           <a href="/about" className="read-more">
             Read more..
           </a>
@@ -157,10 +156,10 @@ const Arkanhome = () => {
 
       <div className="homeservices-section">
         <div className="homeservices-header">
-          <h2>OUR HOMESERVICES</h2>
+          <h2>OUR SERVICES</h2>
           <p>
-            We deliver an extensive range of homeservices, designed to bring
-            your vision to life with precision, quality, and expertise
+            We deliver an extensive range of services, designed to bring your
+            vision to life with precision, quality, and expertise
           </p>
         </div>
 

@@ -144,6 +144,15 @@ const Services = () => {
             </div>
           ))}
         </div>
+        <div className="download-container">
+          <a
+            href="/files/Potfolio.pdf"
+            download="Arkan-Al-Tafawuq-Potfolio.pdf"
+            className="download-button"
+          >
+            Download our Portfolio
+          </a>
+        </div>
       </div>
     </div>
   );
