@@ -287,7 +287,8 @@
     position: center;
     background-color: transparent;
     box-shadow: none;
-    padding-left: 0;
+    padding-right: 0;
+    margin-top: -130px;
   }
 
   .dropdown-menu li {

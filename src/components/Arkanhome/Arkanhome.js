@@ -164,41 +164,39 @@ const Arkanhome = () => {
         </div>
 
         <div className="homeservices-cards">
-          {[construction, production, businessSetup, businessSolutions].map(
-            (img, index) => (
-              <div
-                className="homeservice-card"
-                key={index}
-                ref={(el) => (serviceCardsRef.current[index] = el)}
+          {[production, businessSetup, businessSolutions].map((img, index) => (
+            <div
+              className="homeservice-card"
+              key={index}
+              ref={(el) => (serviceCardsRef.current[index] = el)}
+            >
+              <div className="top-icon">↗</div>
+              <img src={img} alt="Service" className="homeservice-img" />
+              <h3>
+                {
+                  [
+                    // "CONSTRUCTION",
+                    "PRODUCTION",
+                    "BUSINESS SETUP",
+                    "BUSINESS SOLUTIONS",
+                  ][index]
+                }
+              </h3>
+              <a
+                href={`/${
+                  [
+                    // "services",
+                    "production",
+                    "under-construction",
+                    "under-construction",
+                  ][index]
+                }`}
+                className="card-read-more"
               >
-                <div className="top-icon">↗</div>
-                <img src={img} alt="Service" className="homeservice-img" />
-                <h3>
-                  {
-                    [
-                      "CONSTRUCTION",
-                      "PRODUCTION",
-                      "BUSINESS SETUP",
-                      "BUSINESS SOLUTIONS",
-                    ][index]
-                  }
-                </h3>
-                <a
-                  href={`/${
-                    [
-                      "services",
-                      "production",
-                      "under-construction",
-                      "under-construction",
-                    ][index]
-                  }`}
-                  className="card-read-more"
-                >
-                  Read More
-                </a>
-              </div>
-            )
-          )}
+                Read More
+              </a>
+            </div>
+          ))}
         </div>
 
         <div className="why-choose">

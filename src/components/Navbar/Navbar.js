@@ -85,7 +85,7 @@ function Navbar() {
 
               {isDropdownVisible && (
                 <ul className="dropdown-menu">
-                  <li>
+                  {/* <li>
                     <Link
                       to="/services"
                       onClick={() => {
@@ -95,7 +95,7 @@ function Navbar() {
                     >
                       Construction
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       to="/production"

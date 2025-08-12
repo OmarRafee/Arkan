@@ -23,10 +23,10 @@ const Footer = () => {
           <div className="logo-and-description">
             <img src={arkansmall} alt="Arkan Logo" className="footer-logo" />
             <p>
-              <span className="custom-font">Arkan Al-Tafawuq</span>, a BinRashid
-              Group company, excels in Construction, Business Solutions, and
-              Marketing. Driven by innovation and integrity, we shape a future
-              where ambition meets achievement.
+              <span className="custom-font">Arkan Al-Tafawuq</span>, excels in
+              Construction, Business Solutions, and Marketing. Driven by
+              innovation and integrity, we shape a future where ambition meets
+              achievement.
             </p>
           </div>
         </div>
@@ -34,11 +34,11 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Our Services</h4>
           <ul>
-            <li>
+            {/* <li>
               <Link to="/services" className="none nonemargin">
                 Construction{" "}
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/production" className="none nonemargin">
                 Production{" "}
@@ -88,7 +88,7 @@ const Footer = () => {
 
         <div className="footer-section">
           <h4>Follow Us</h4>
-          <h7>Constsruction</h7>
+          {/* <h7>Constsruction</h7>
           <div className="social-icons">
             <a
               href="https://www.instagram.com/arkanaltafawuq?igsh=bXpsaXkwMXNzbWk5"
@@ -125,15 +125,15 @@ const Footer = () => {
             >
               <FaTiktok className="icon" />
             </a>
-            {/* <a
+            <a
               href="https://www.youtube.com/@ArkanAlTafawuq"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaYoutube className="icon" />
-            </a> */}
-          </div>
-          <h7>Production</h7>
+            </a>
+          </div> */}
+          {/* <h7>Production</h7> */}
           <div className="social-icons">
             <a
               href="https://www.instagram.com/arkanaltafawuqproductionhouse?igsh=N253dXZ5bTBvYThr&utm_source=qr"
