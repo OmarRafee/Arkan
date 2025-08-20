@@ -1,22 +1,21 @@
-@font-face {
+/* @font-face {
   font-family: "DMSerifText-Regular";
   src: url("./fonts/DMSerifText-Regular.ttf") format("truetype");
 }
 
-/* Make sure the HTML and body take up the full height */
 html,
 body {
   height: 100%;
-  margin: 0; /* Remove default spacing */
+  margin: 0; 
   background-color: white;
 }
 
 #root {
   display: flex;
-  flex-direction: column; /* Create a vertical layout */
-  min-height: 100vh; /* Full height of the viewport */
+  flex-direction: column; 
+  min-height: 100vh;
 }
 
 .main-content {
-  flex: 1; /* This pushes the footer to the bottom when the content is short */
-}
+  flex: 1; 
+} */

@@ -12,13 +12,14 @@ import {
 import { motion } from "framer-motion";
 
 const About = () => {
+  // Production-focused values
   const values = [
-    { icon: <FaHandshake />, text: "THOUGHT PARTNERSHIP" },
-    { icon: <FaLightbulb />, text: "BE THE SOLUTION" },
-    { icon: <FaChessKing />, text: "LEADERSHIP" },
-    { icon: <FaBookOpen />, text: "LEARN AND TEACH" },
-    { icon: <FaMedal />, text: "DELIVER WITH EXCELLENCE" },
-    { icon: <FaGlobeAmericas />, text: "DIVERSITY" },
+    { icon: <FaHandshake />, text: "CLIENT COLLABORATION" },
+    { icon: <FaLightbulb />, text: "INNOVATION & R&D" },
+    { icon: <FaChessKing />, text: "END-TO-END OWNERSHIP" },
+    { icon: <FaBookOpen />, text: "CONTINUOUS IMPROVEMENT" },
+    { icon: <FaMedal />, text: "QUALITY & ON-TIME DELIVERY" },
+    { icon: <FaGlobeAmericas />, text: "SUSTAINABLE PRACTICES" },
   ];
 
   return (
@@ -30,7 +31,7 @@ const About = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={aboutMainImg} alt="About Background" className="hero-image" />
+        <img src={aboutMainImg} alt="Production Background" className="hero-image" />
       </motion.div>
 
       {/* Main Content Section */}
@@ -45,10 +46,10 @@ const About = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <span className="highlight">ABOUT US</span>
+            <span className="highlight">PRODUCTION</span>
             <span className="divider">|</span>
             <span className="headline">
-              Welcome to Arkan Al-Tafawuq, where ambition meets achievement.
+              Precision fabrication, premium finishing, and reliable delivery.
             </span>
           </motion.h2>
 
@@ -59,16 +60,19 @@ const About = () => {
               transition={{ duration: 0.3 }}
             >
               <p>
-                <strong>As a key part of BinRashid Group</strong>, we specialize
-                in Construction, Architectural Design, Interior and Exterior
-                Designs, Advertising, Event Execution, Business Solutions, and
-                Production House Services, ensuring exceptional standards across
-                Saudi Arabia.
+                <strong>Arkan Al-Tafawuq Production House</strong> delivers
+                end-to-end fabrication and print solutions—covering{' '}
+                <strong>acrylic, wood, metal, and composite</strong> works with
+                a fully equipped workshop. Our capabilities include{' '}
+                <strong>CNC routing, laser cutting, bending, welding,
+                painting,</strong> and meticulous assembly to achieve
+                brand-perfect results.
               </p>
               <p>
-                Our expertise spans residential and commercial construction, 3D
-                design, and finishing, delivering high-quality, efficient, and
-                modern aesthetics tailored to diverse client needs.
+                We produce <strong>signage, wayfinding systems, retail fixtures,
+                display stands, exhibition booths, 3D props,</strong> and custom
+                installations—engineered for durability, clean finishes, and fast
+                installation on site.
               </p>
             </motion.div>
 
@@ -78,29 +82,18 @@ const About = () => {
               transition={{ duration: 0.3 }}
             >
               <p>
-                <strong>In Advertising, Branding, and Event Execution</strong>,
-                our Production House offers strategic brand positioning, booth
-                fabrication, signage, high-quality printing, LED screen setups,
-                acrylic and wood craftsmanship, ensuring impactful brand
-                presence and immersive audience engagement.
+                Our print division handles <strong>large-format, UV, and
+                eco-solvent</strong> printing for backdrops, billboards, wall
+                wraps, vehicle branding, and packaging mockups. We also provide
+                <strong> LED screen setups, truss & staging,</strong> and
+                turnkey <strong>event production</strong> with on-site
+                installation and dismantling.
               </p>
               <p>
-                <strong>Arkan Al-Tafawuq</strong> brings visions to life with
-                <strong> creativity, precision, and dedication.</strong>
+                From <strong>technical drawings</strong> to <strong>final
+                handover</strong>, we manage timelines, quality control, and
+                safety to keep your activation or fit-out on schedule—every time.
               </p>
-
-              {/* <motion.a
-                href="/portfolio.pdf"
-                className="download-btn"
-                download
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Download Our Portfolio
-              </motion.a> */}
             </motion.div>
           </div>
         </div>
@@ -118,19 +111,16 @@ const About = () => {
             <h3>MISSION</h3>
             <div className="underline mission-line"></div>
             <p>
-              Our mission at Arkan Al-Tafawuq is to Create pioneering solutions
-              in Marketing and Advertising, Business Solutions, Construction,
-              and Production House Services, combining innovation and expertise
-              to ensure excellence in every project.
+              To craft high-quality production deliverables—fabrication, printing,
+              signage, booths, and event setups—through precise engineering,
+              robust materials, and disciplined project management.
             </p>
           </div>
           <div className="mv-content back">
             <p>
-              We are dedicated to enhancing brand presence through strategic
-              branding, visual communication, and event execution, crafting
-              unique and immersive experiences that engage audiences and
-              strengthen market impact. Driven by integrity, innovation, and
-              excellence, we continually strive to set new benchmarks.
+              We align with brand guidelines, optimize costs and lead times, and
+              maintain rigorous QC at each stage—from cutting and finishing to
+              packaging and installation—ensuring flawless results on site.
             </p>
           </div>
         </motion.div>
@@ -145,18 +135,15 @@ const About = () => {
             <h3>VISION</h3>
             <div className="underline vision-line"></div>
             <p>
-              Our vision at Arkan Al-Tafawuq is to be the driving force of
-              innovation and excellence across the Construction, Marketing &
-              Advertising, Production House, and Business Solutions Services.
+              To be the region’s most trusted production partner for brands and
+              agencies—known for reliability, innovation, and premium finishing.
             </p>
           </div>
           <div className="mv-content back">
             <p>
-              We aim to push boundaries, redefine standards, and consistently
-              surpass expectations in every endeavor. With a steadfast
-              commitment to sustainability, client satisfaction, and industry
-              leadership, we aspire to create a future where our work leaves a
-              lasting impact on businesses, industries, and communities.
+              We invest in advanced machinery, materials, and talent to expand
+              capacity, elevate standards, and deliver sustainable, scalable
+              production at speed.
             </p>
           </div>
         </motion.div>

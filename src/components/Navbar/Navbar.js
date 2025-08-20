@@ -66,7 +66,18 @@ function Navbar() {
                 About
               </Link>
             </li>
-            <li
+            <li>
+                    <Link
+                      to="/production"
+                      onClick={() => {
+                        closeDropdown();
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      Production
+                    </Link>
+                  </li>
+            {/* <li
               className="dropdown"
               ref={dropdownRef}
               onClick={(e) => e.stopPropagation()}
@@ -85,7 +96,7 @@ function Navbar() {
 
               {isDropdownVisible && (
                 <ul className="dropdown-menu">
-                  {/* <li>
+                  <li>
                     <Link
                       to="/services"
                       onClick={() => {
@@ -95,7 +106,7 @@ function Navbar() {
                     >
                       Construction
                     </Link>
-                  </li> */}
+                  </li>
                   <li>
                     <Link
                       to="/production"
@@ -131,7 +142,7 @@ function Navbar() {
                   </li>
                 </ul>
               )}
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/ContactUs"

@@ -23,10 +23,7 @@ const Footer = () => {
           <div className="logo-and-description">
             <img src={arkansmall} alt="Arkan Logo" className="footer-logo" />
             <p>
-              <span className="custom-font">Arkan Al-Tafawuq</span>, excels in
-              Construction, Business Solutions, and Marketing. Driven by
-              innovation and integrity, we shape a future where ambition meets
-              achievement.
+              <span className="custom-font">Arkan Al-Tafawuq</span>, excels in Booth Production, Exhibition Solutions, and Printing Services.
             </p>
           </div>
         </div>
@@ -44,7 +41,7 @@ const Footer = () => {
                 Production{" "}
               </Link>
             </li>
-            <li>
+            {/* <li>
               {" "}
               <Link to="/under-construction" className="none nonemargin">
                 Business Setup{" "}
@@ -54,7 +51,7 @@ const Footer = () => {
               <Link to="/under-construction" className="none nonemargin">
                 Business Solutions{" "}
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 

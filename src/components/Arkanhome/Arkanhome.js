@@ -1,17 +1,18 @@
-import React, { useEffect, useRef } from "react";
+// File: src/pages/Arkanhome.jsx
+import React, { useEffect, useMemo } from "react";
 import "./Arkanhome.css";
+
+// Assets
 import heroImage from "../../assets/arkanhero.webp";
 import production from "../../assets/production.webp";
-import businessSetup from "../../assets/business-setup.webp";
-import businessSolutions from "../../assets/business-solutions.webp";
-import construction from "../../assets/construction.webp";
 import team from "../../assets/team.webp";
 import client from "../../assets/client.webp";
 import solution from "../../assets/solution.webp";
 import track from "../../assets/track.webp";
+
+// Partner & client logos
 import partner1 from "../../assets/partner1.webp";
 import partner2 from "../../assets/partner2.webp";
-import partner3 from "../../assets/partner3.webp";
 import partner4 from "../../assets/partner4.webp";
 import partner5 from "../../assets/partner5.webp";
 import partner6 from "../../assets/partner6.webp";
@@ -40,233 +41,197 @@ import client9 from "../../assets/client9.webp";
 import client10 from "../../assets/client10.webp";
 import client11 from "../../assets/client11.webp";
 
-const Arkanhome = () => {
-  const heroRef = useRef(null);
-  const introRef = useRef(null);
-  const serviceCardsRef = useRef([]);
-  const whyItemsRef = useRef([]);
+const SERVICES = [
+  {
+    title: "PRODUCTION",
+    href: "/production",
+    img: production,
+    blurb:
+      "Full in-house fabrication, printing, and event setup services—delivering signage, booths, branding elements, LED screen rigs, and premium finishes on time, every time.",
+  },
+];
 
-  useEffect(() => {
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (entry.target === heroRef.current) {
-              entry.target.classList.add("hero-animate");
-            } else if (entry.target === introRef.current) {
-              entry.target.classList.add("intro-animate");
-            } else if (serviceCardsRef.current.includes(entry.target)) {
-              entry.target.classList.add("card-animate");
-            } else if (whyItemsRef.current.includes(entry.target)) {
-              entry.target.classList.add("why-item-animate");
-            }
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+const WHY = [
+  {
+    title: "Expert Fabrication Team",
+    text: "Specialists in acrylic, wood, metal, and composite works with CNC, laser, and advanced finishing tools.",
+    img: team,
+  },
+  {
+    title: "Client-Focused Approach",
+    text: "We adapt every production job to your deadlines, brand standards, and on-site requirements.",
+    img: client,
+  },
+  {
+    title: "Integrated Solutions",
+    text: "From design files to installation—one team handles every stage, reducing errors and delays.",
+    img: solution,
+  },
+  {
+    title: "Proven Track Record",
+    text: "A long list of completed booths, signage systems, and brand activations across the Kingdom.",
+    img: track,
+  },
+];
 
-    if (heroRef.current) observer.observe(heroRef.current);
-    if (introRef.current) observer.observe(introRef.current);
-    serviceCardsRef.current.forEach((card) => card && observer.observe(card));
-    whyItemsRef.current.forEach((item) => item && observer.observe(item));
+const PARTNERS = [
+  partner1,
+  partner2,
+  partner4,
+  partner5,
+  partner6,
+  partner7,
+  partner8,
+  partner9,
+  partner10,
+  partner11,
+  partner12,
+  partner13,
+  partner14,
+  partner15,
+  partner16,
+  partner17,
+  partner18,
+];
 
-    return () => observer.disconnect();
+const CLIENTS = [
+  client1,
+  client2,
+  client3,
+  client4,
+  client5,
+  client6,
+  client7,
+  client8,
+  client9,
+  client10,
+  client11,
+];
+
+export default function Arkanhome() {
+  const marqueeClients = useMemo(() => {
+    const out = [];
+    let i = 0;
+    while (out.length < 20) {
+      out.push(CLIENTS[i % CLIENTS.length]);
+      i++;
+    }
+    return out;
   }, []);
 
-  const clientImages = [
-    client1,
-    client2,
-    client3,
-    client4,
-    client5,
-    client6,
-    client7,
-    client8,
-    client9,
-    client10,
-    client11,
-  ];
-  const repeatedImages = [];
+  const marqueePartners = useMemo(() => {
+    const out = [];
+    let i = 0;
+    while (out.length < 20) {
+      out.push(PARTNERS[i % PARTNERS.length]);
+      i++;
+    }
+    return out;
+  }, []);
 
-  let i = 0;
-  while (repeatedImages.length < 20) {
-    if (i >= clientImages.length) i = 0;
-    repeatedImages.push(clientImages[i]);
-    i++;
-  }
-
-  const partnerImages = [
-    partner1,
-    partner2,
-
-    partner4,
-    partner5,
-    partner6,
-    partner7,
-    partner8,
-    partner9,
-    partner10,
-    partner11,
-    partner12,
-    partner13,
-    partner14,
-    partner15,
-    partner16,
-    partner17,
-    partner18,
-  ];
-  const repeatedPartners = [];
-
-  let j = 0;
-  while (repeatedPartners.length < 20) {
-    if (j >= partnerImages.length) j = 0;
-    repeatedPartners.push(partnerImages[j]);
-    j++;
-  }
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => e.isIntersecting && e.target.classList.add("in"));
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <div className="arkan-home">
-      <div className="hero-section" ref={heroRef}>
-        <img src={heroImage} alt="Arkan Hero" className="hero-image" />
-        <div className="highlight-bar">
-          <h1>
-            BUILDING THE FUTURE WITH
-            <span className="bold">KINGDOM</span>-WORTHY QUALITY
+    <main className="arkan">
+      {/* HERO */}
+      <section className="hero" aria-label="Hero">
+        <img src={heroImage} alt="Production hero visual" className="hero__bg" />
+        <div className="hero__overlay" />
+        <div className="hero__content" data-reveal>
+          <h1 className="hero__title">
+            PRECISION PRODUCTION WITH <span>KINGDOM</span>-GRADE QUALITY
           </h1>
-        </div>
-      </div>
-
-      <div className="intro-section" ref={introRef}>
-        <p>
-          Welcome to <span className="highlight">Arkan Al-Tafawuq</span>, where
-          ambition meets achievement.
-        </p>
-        <p>
-          We specialize in Construction, Architectural Design, Interior and
-          Exterior Designs, Advertising, Event Execution, Business Solutions,
-          and Production House services, ensuring exceptional standards across
-          Saudi Arabia.{" "}
-          <a href="/about" className="read-more">
-            Read more..
+          <p className="hero__subtitle">• Production Excellence •</p>
+          <a className="btn btn--primary" href="/production" aria-label="Read more about Production">
+            Read more
           </a>
-        </p>
-      </div>
-
-      <div className="homeservices-section">
-        <div className="homeservices-header">
-          <h2>OUR SERVICES</h2>
-          <p>
-            We deliver an extensive range of services, designed to bring your
-            vision to life with precision, quality, and expertise
-          </p>
         </div>
+      </section>
 
-        <div className="homeservices-cards">
-          {[production, businessSetup, businessSolutions].map((img, index) => (
-            <div
-              className="homeservice-card"
-              key={index}
-              ref={(el) => (serviceCardsRef.current[index] = el)}
+      {/* SERVICES */}
+      <section className="services container" aria-labelledby="services-title">
+        <header className="section__head" data-reveal>
+          <h2 id="services-title">Our Production Service</h2>
+          <p>From workshop to on-site installation—seamless, reliable, and built to last.</p>
+        </header>
+
+        <div className="services__grid">
+          {SERVICES.map((s, i) => (
+            <article
+              className="card"
+              key={s.title}
+              data-reveal
+              style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="top-icon">↗</div>
-              <img src={img} alt="Service" className="homeservice-img" />
-              <h3>
-                {
-                  [
-                    // "CONSTRUCTION",
-                    "PRODUCTION",
-                    "BUSINESS SETUP",
-                    "BUSINESS SOLUTIONS",
-                  ][index]
-                }
-              </h3>
-              <a
-                href={`/${
-                  [
-                    // "services",
-                    "production",
-                    "under-construction",
-                    "under-construction",
-                  ][index]
-                }`}
-                className="card-read-more"
-              >
-                Read More
-              </a>
+              <div className="card__media">
+                <img src={s.img} alt={`${s.title} illustration`} loading="lazy" />
+              </div>
+              <div className="card__body">
+                <h3 className="card__title">{s.title}</h3>
+                <p className="card__blurb">{s.blurb}</p>
+                <a className="btn btn--ghost" href={s.href} aria-label={`Read more about ${s.title}`}>
+                  Read more ↗
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="why container" aria-labelledby="why-title">
+        <header className="section__head" data-reveal>
+          <h2 id="why-title">Why choose our Production?</h2>
+        </header>
+        <div className="why__list">
+          {WHY.map((w, i) => (
+            <div
+              className="why__item"
+              key={w.title}
+              data-reveal
+              style={{ transitionDelay: `${i * 60}ms` }}
+            >
+              <img className="why__icon" src={w.img} alt="" aria-hidden="true" loading="lazy" />
+              <div className="why__text">
+                <h4>{w.title}</h4>
+                <p>{w.text}</p>
+              </div>
             </div>
           ))}
         </div>
+      </section>
 
-        <div className="why-choose">
-          <div className="why-left">
-            <h2>
-              WHY CHOOSE
-              <br />
-              ARKAN AL TAFAWUQ ?
-            </h2>
+      {/* MARQUEES */}
+      <section className="logos" aria-label="Clients and partners">
+        <div className="container">
+          <h2 className="section__title" data-reveal>Our Clients</h2>
+          <div className="marquee" data-reveal>
+            <div className="marquee__track">
+              {marqueeClients.map((src, i) => (
+                <img key={`c-${i}`} src={src} alt="Client logo" loading="lazy" />
+              ))}
+            </div>
           </div>
-          <div className="why-right">
-            {[
-              {
-                img: team,
-                title: "Experienced Team",
-                text: "Our team comprises industry experts with a wealth of knowledge and experience.",
-              },
-              {
-                img: client,
-                title: "Client-Focused Approach",
-                text: "We tailor our homeservices to meet the specific needs of each client.",
-              },
-              {
-                img: solution,
-                title: "Integrated Solutions",
-                text: "We offer a one-stop solution for marketing and construction needs.",
-              },
-              {
-                img: track,
-                title: "Proven Track Record",
-                text: "We have a history of successful projects and satisfied clients.",
-              },
-            ].map((item, index) => (
-              <div
-                className="why-item"
-                key={index}
-                ref={(el) => (whyItemsRef.current[index] = el)}
-              >
-                <img src={item.img} alt={item.title} className="why-img" />
-                <div className="why-text">
-                  <h4>{item.title}</h4>
-                  <p>{item.text}</p>
-                </div>
-              </div>
-            ))}
+
+          <h2 className="section__title" data-reveal>Our Partners</h2>
+          <div className="marquee marquee--reverse" data-reveal>
+            <div className="marquee__track">
+              {marqueePartners.map((src, i) => (
+                <img key={`p-${i}`} src={src} alt="Partner logo" loading="lazy" />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="carousel-section">
-        <h2>OUR CLIENTS</h2>
-        <div className="logo-marquee">
-          <div className="marquee-track">
-            {repeatedImages.map((img, idx) => (
-              <img key={idx} src={img} alt={`client-${idx}`} />
-            ))}
-          </div>
-        </div>
-
-        <h2>OUR PARTNERS</h2>
-        <div className="logo-marquee">
-          <div className="marquee-track reverse">
-            {repeatedPartners.map((img, idx) => (
-              <img key={idx} src={img} alt={`partner-${idx}`} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
-};
-
-export default Arkanhome;
+}
