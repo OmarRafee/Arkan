@@ -76,7 +76,18 @@ function Navbar() {
                     >
                       Production
                     </Link>
-                  </li>
+                  </li> 
+                    <li>
+                    <Link
+                      to="/DigitalMarketing"
+                      onClick={() => {
+                        closeDropdown();
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      DigitalMarketing
+                    </Link>
+                  </li> 
             {/* <li
               className="dropdown"
               ref={dropdownRef}

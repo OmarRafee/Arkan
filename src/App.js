@@ -24,6 +24,7 @@ import Residential from "./components/Residential/Residential";
 import Design from "./components/Design/Design";
 import Arkanhome from "./components/Arkanhome/Arkanhome";
 import Production from "./components/Production/Production";
+import DigitalMarketing from "./components/DigitalMarketing/DigitalMarketing";
 
 const App = () => {
   return (
@@ -54,6 +55,7 @@ const App = () => {
           <Route exact path="/Residential" component={Residential} />
           <Route exact path="/Design" component={Design} />
           <Route exact path="/production" component={Production} />
+          <Route exact path="/DigitalMarketing" component={DigitalMarketing} />
           <Route
             exact
             path="/under-construction"
